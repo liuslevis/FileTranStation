@@ -26,7 +26,7 @@ import subprocess
 app = flask.Flask(__name__)
 app.debug = True
 
-DOWNLOAD_PATH = '/home/django/FileTranStation/download'
+DOWNLOAD_PATH = './download'
 DOWNLOAD_PATH_URL = '/FileTranStation/download'
 
 # 日志处理
@@ -60,8 +60,9 @@ def downloadURL():
 
     # wget
     # -Q10K: in case try to download recursively, limit at 10KB size.
-
-    resultText = subprocess.check_output(['wget', '\''+str(url)+'\'', '-Q10K','-directory-prefix',DOWNLOAD_PATH,'-o', 'lastDownload.log'])
+    # -o: write log
+    # --directory-prefix: save to path
+    resultText = subprocess.check_output(['wget', str(url), '-Q10K','--directory-prefix',DOWNLOAD_PATH,'-o', 'lastDownload.log'])
     resultURL = DOWNLOAD_PATH_URL
     return flask.render_template('index.html', resultURL=resultURL, resultText=resultText)
 
