@@ -61,7 +61,7 @@ def downloadURL():
     # wget
     # -Q10K: in case try to download recursively, limit at 10KB size.
 
-    resultText = subprocess.check_output(['wget', str(url), '-Q10K','-directory-prefix',DOWNLOAD_PATH,'-o', 'lastDownload.log'])
+    resultText = subprocess.check_output(['wget', '\''+str(url)+'\'', '-Q10K','-directory-prefix',DOWNLOAD_PATH,'-o', 'lastDownload.log'])
     resultURL = DOWNLOAD_PATH_URL
     return flask.render_template('index.html', resultURL=resultURL, resultText=resultText)
 
