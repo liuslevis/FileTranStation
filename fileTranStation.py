@@ -70,7 +70,9 @@ def downloadURL():
 # page for user paste download url
 @app.route('/')
 def index():
-    return flask.render_template('index.html')
+    resultURL = DOWNLOAD_PATH_URL
+    resultText = ''
+    return flask.render_template('index.html', resultURL=resultURL, resultText=resultText)
 
 if __name__ == '__main__':
     print 'FileTranStation is running. Hold Ctrl+C to stop.'
