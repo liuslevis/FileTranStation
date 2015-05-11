@@ -26,8 +26,9 @@ import subprocess
 app = flask.Flask(__name__)
 app.debug = True
 
+HOST_NAME = 'http://babylocation.tk'
 DOWNLOAD_PATH = './download'
-DOWNLOAD_PATH_URL = '/FileTranStation/download'
+DOWNLOAD_PATH_URL = HOST_NAME + '/FileTranStation/download'
 
 # 日志处理
 # 使用：app.logger.[debug|info|warning|error|critical]("MSG") 
