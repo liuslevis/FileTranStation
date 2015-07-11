@@ -3,7 +3,7 @@ a web app help you to download and store file on VPS with given URL.
 
 ## Run
 
-0. install neceesary package:
+0. install neccesary package:
 
 ``` bash
 sudo apt-get install gunicorn supervisor pip mongodb nginx-extra
