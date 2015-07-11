@@ -3,11 +3,21 @@ a web app help you to download and store file on VPS with given URL.
 
 ## Run
 
+0. install neceesary package:
+
+``` bash
+sudo apt-get install gunicorn supervisor pip mongodb nginx-extra
+pip install Pillow pymongo flask
+```
+
 1. Setup nginx:
+
+remove default sites (in DigitalOcean+Ubuntu+Django) : `rm -rf /etc/nginx/sites-enabled/django`
+
+`vi /etc/nginx/sites-enabled/davidlau.me`
 
 ``` bash
 
-vi /etc/nginx/sites-enabled/davidlau.me 
 server
 {
     listen 80;
